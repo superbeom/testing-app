@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "testing-app",
+    "name": "장기",
     "slug": "testing-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,11 +13,14 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.heungdo.testingapp",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.heungdo.testingapp",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"

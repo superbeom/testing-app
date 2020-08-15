@@ -991,6 +991,11 @@
   dependencies:
     "@types/hammerjs" "^2.0.36"
 
+"@expo-google-fonts/noto-sans-kr@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/noto-sans-kr/-/noto-sans-kr-0.1.0.tgz#09d01f38d5dce88f88de1aeff1d9ff47f59a814e"
+  integrity sha512-mwtwRwD+9wc49/2rBxmJ6mBtGdJECxTWk5ghVb5dLoFuqFAKjgh/6MCurmmcSi34i9uYQ75+T+cl+tMOhJ+L4Q==
+
 "@expo/configure-splash-screen@0.1.13":
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/@expo/configure-splash-screen/-/configure-splash-screen-0.1.13.tgz#9f974146d716ffc03461e4d2deb7bfb22826e56a"
@@ -2473,7 +2478,7 @@ expo-file-system@~9.0.1:
   dependencies:
     uuid "^3.4.0"
 
-expo-font@~8.2.1:
+expo-font@^8.2.2, expo-font@~8.2.1:
   version "8.2.2"
   resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-8.2.2.tgz#c67ee8d3841921a907464d67e8098baeed92bacf"
   integrity sha512-p/a7Ve+3LiR9ofn77U0UuuE6ZQiLVu3M1btiKUDe5efAp48D9GG41AevKQ7YnkfxTDdGJa0ACAtJAVsAD30jGA==
