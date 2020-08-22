@@ -1,65 +1,48 @@
-import React from "react";
-import { ActivityIndicator, View, Text } from "react-native";
-import {
-  useFonts,
-  NotoSansKR_400Regular,
-  NotoSansKR_900Black,
-} from "@expo-google-fonts/noto-sans-kr";
+import React, { useState } from "react";
+import { View, Button, Platform } from "react-native";
+import DateTimePicker from "@react-native-community/datetimepicker";
 
-export default App = () => {
-  const [fontsLoaded] = useFonts({
-    NotoSansKR_400Regular,
-    NotoSansKR_900Black,
-  });
+export default () => {
+  const [date, setDate] = useState(new Date(1598051730000));
+  const [mode, setMode] = useState("date");
+  const [show, setShow] = useState(false);
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === "ios");
+    setDate(currentDate);
+  };
+
+  const showMode = (currentMode) => {
+    setShow(true);
+    setMode(currentMode);
+  };
+
+  const showDatepicker = () => {
+    showMode("date");
+  };
+
+  const showTimepicker = () => {
+    showMode("time");
+  };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "black",
-      }}
-    >
-      {fontsLoaded && (
-        <>
-          <View style={{ flexDirection: "row", marginBottom: 5 }}>
-            <Text
-              style={{
-                color: "#fff",
-                fontSize: 36,
-                fontFamily: "NotoSansKR_400Regular",
-              }}
-            >
-              kakao
-            </Text>
-            <Text
-              style={{
-                color: "#fff",
-                fontSize: 36,
-                fontFamily: "NotoSansKR_900Black",
-              }}
-            >
-              games
-            </Text>
-          </View>
-          <ActivityIndicator
-            style={{ marginBottom: 10 }}
-            size={"large"}
-            color={"#AD5A01"}
-          />
-          <View
-            style={{
-              padding: 25,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Text style={{ color: "#fff", fontSize: 18 }}>
-              일시적인 오류로 연결이 끊깁니다.
-            </Text>
-          </View>
-        </>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View style={{ marginBottom: 20 }}>
+        <Button onPress={showDatepicker} title="Show date picker!" />
+      </View>
+      <View>
+        <Button onPress={showTimepicker} title="Show time picker!" />
+      </View>
+      {show && (
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode={mode}
+          is24Hour={true}
+          display="default"
+          onChange={onChange}
+        />
       )}
     </View>
   );
